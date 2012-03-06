@@ -1,0 +1,20 @@
+- content_for :head do
+  .header.page
+    .container
+      .row
+        .span12
+          %h1 Floral Design With Ms. H.
+
+- content_for :breadcrumbs do
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', '/'
+          %span.divider /
+        %li.active
+          =link_to 'Floral Design', '/', :class => 'active'
+
+%h3 Floral Design is a semester course offered to all ages at Monroe High School and is an Art credit, Occupational credit, or Elective credit.
+
+%p Floriculture is the study of floral design. This course is beneficial to students of all ages within the high school. Students will develop skills in plant maintenance, the proper use of plants, floral design and construction, floral tools, safety practices, sales, and customer relations. Emphasis is placed on the art of floral design and production of flowers and plants. This course is a great way to learn more about floral and horticulture industries. The greenhouse provides a hands-on lab environment for student projects and experiments, along with the opportunity to manage a retail business. Student Class fee is $20.

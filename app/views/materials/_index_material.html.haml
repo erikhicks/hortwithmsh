@@ -1,0 +1,8 @@
+.row.index_material
+  .span9.material_info
+    %span 
+      = index_material.name
+  .span3.actions
+    %a.btn{:href => materials_path(index_material) } Edit
+    %a.btn Disable
+    %a.btn.btn-danger Delete

@@ -1,0 +1,42 @@
+!!! html
+
+%html
+  %head
+    %title Horticulture With Ms. H
+    = stylesheet_link_tag 'application', :media => 'all'
+    = javascript_include_tag 'http://www.google.com/jsapi'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body{:onload => 'Page.init();'}
+    = yield :head
+    .container
+      = yield :breadcrumbs
+      .row
+        .span3
+          %ul.nav.nav-pills.nav-stacked
+            =nav_link 'About Me', 'about'
+          %h3 Classes
+          %ul.nav.nav-pills.nav-stacked
+            =nav_link 'Plant Science', 'plant_science'
+            =nav_link 'Plant Science II', 'plant_science_ii'
+            =nav_link 'Floral Design', 'floral_design'
+            =nav_link 'Career Choices', 'career_choices'
+          -#
+            %h3 Activities
+            %ul.nav.nav-pills.nav-stacked
+              %li.dropdown{:id => 'nav_ffa'}
+                %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#nav_ffa'}
+                  FFA
+                  %b.caret
+                %ul.dropdown-menu
+                  %li= link_to 'Current Members'
+                  %li= link_to 'Competitions'
+                  %li= link_to 'Evergreen State Fair'
+              %li= link_to 'STEM', 'stem'
+              %li= link_to 'Plant Sale', 'plant_sale'
+              %li= link_to 'Our Greenhouse', 'greenhouse'
+              %li= link_to 'Hydroponics', 'hydroponics'
+        .span9
+          = yield
+          

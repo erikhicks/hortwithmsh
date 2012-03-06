@@ -1,0 +1,20 @@
+- content_for :head do
+  .header.page
+    .container
+      .row
+        .span12
+          %h1 Plant Science II With Ms. H.
+
+- content_for :breadcrumbs do
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', '/'
+          %span.divider /
+        %li.active
+          =link_to 'Plant Science II', '/', :class => 'active'
+
+%h3 Plant Science II is a year long course offered to all ages at Monroe High School and is a Occupational credit or Elective credit.
+
+%p This yearlong course is designed to provide hands-on experience in the design, construction, and maintenance of landscapes, the construction and maintenance of plant growing facilities, and the proper and safe use of hand and power horticulture equipment. Students will be actively involved in developing facilities and laboratory areas needed for a complete plant science experience. Outdoor physical participation is required and will require clothing and footwear suitable for work in all types of weather conditions. Because projects may involved working in small groups in several locations, maturity and self-responsibility is critical in this course. Student Class Fee is $10.

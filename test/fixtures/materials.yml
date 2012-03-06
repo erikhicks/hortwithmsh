@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  filename: MyString
+  enabled: false
+  sort_order: 1
+
+two:
+  filename: MyString
+  enabled: false
+  sort_order: 1

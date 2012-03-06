@@ -1,0 +1,35 @@
+!!! html
+
+%html
+  %head
+    %title Horticulture With Ms. H
+    = stylesheet_link_tag 'application', :media => 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    .navbar
+      .navbar-inner
+        .container
+          .brand
+            Classes With Ms. H
+          %ul.nav
+            %li= link_to 'About Ms H.', 'about'
+            %li= link_to 'FFA', 'ffa'
+            %li= link_to 'STEM', 'stem'
+            %li= link_to 'Plant Sale', 'plant_sale'
+            %li= link_to 'Our Greenhouse', 'greenhouse'
+            %li= link_to 'Hydroponics', 'hydroponics'
+            %li
+              %a Plant Science
+            %li
+              %a Plant Science II
+            %li
+              %a Floral Design
+            %li
+              %a Career Choices
+
+    .container
+      .row
+        .span12
+          = yield

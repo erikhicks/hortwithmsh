@@ -1,0 +1,28 @@
+%h3 Manage Classes
+%h1= @classroom.name
+
+= form_tag edit_classroom_path(@classroom), :remote => true, :id => 'classroom_form' do
+  %label{:for => 'name'} Name
+  %input{:class => 'span6', :name => 'classroom[name]', :id => 'classroom[name]', :value => @classroom.name}
+
+%h2 Units
+
+#units
+  = render :partial => 'units/index_unit', :collection => @classroom.units
+
+%button{:class => 'btn btn-primary', :id => 'add_unit_button', 'data-toggle' => 'modal', :href => '#add_unit'} 
+  %i{:class => 'icon-plus icon-white'}
+  Add Unit
+%button{:class => 'btn btn-primary', :id => 'save_changes'} Save Changes 
+
+#add_unit.modal.hide.fade.in
+  .modal-header
+    %a.close{'data-dismiss' => 'modal'} x
+    %h3 Enter a name for this class:
+  .modal-body
+    = form_tag classrooms_path + '/add_unit/', :remote => true, :id => 'add_unit_form' do
+      %label
+      %input#unit_name{:name => 'name'}
+  .modal-footer
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'create_classroom_button'} Create
+    %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel

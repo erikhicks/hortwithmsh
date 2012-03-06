@@ -1,0 +1,20 @@
+- content_for :head do
+  .header.page
+    .container
+      .row
+        .span12
+          %h1 Plant Science With Ms. H.
+
+- content_for :breadcrumbs do
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', '/'
+          %span.divider /
+        %li.active
+          =link_to 'Plant Science', '/', :class => 'active'
+
+%h3 Plant Science is a year long course offered to all ages at Monroe High School and is a Science credit, Occupational credit, or Elective credit.
+
+%p In plant science, students study plant parts and functions, plant growth, development, reproduction, and identification in this hands-on class. Plant health and insect controls, plant selection, plant schedules and controlling environmental factors are discussed and are important parts of the greenhouse laboratory spring production. First semester works involves classroom study with partial time in the greenhouse. Second semester is the application of classroom concepts in the greenhouse laboratory and culminates with the sale of the students' work. Student Class Fee is $10.

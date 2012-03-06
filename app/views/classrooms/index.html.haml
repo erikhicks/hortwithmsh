@@ -1,0 +1,19 @@
+%h1 Manage Classes
+
+#classrooms
+  = render :partial => 'index_classroom', :collection => @classrooms
+
+%button{:class => 'btn-primary btn-large', 'data-toggle' => 'modal', :href => '#new_class'}
+  %i{:class => 'icon-plus icon-white'}
+  Create New Class
+
+#new_class.modal.hide.fade.in
+  .modal-header
+    %a.close{'data-dismiss' => 'modal'} x
+    %h3 Enter a name for this class:
+  .modal-body
+    = form_tag classrooms_path, :remote => true, :id => 'create_classroom_form', :update => 'classrooms' do
+      %input#class_name{:name => 'class_name'}
+  .modal-footer
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'create_classroom_button'} Create
+    %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel

@@ -1,0 +1,8 @@
+.row.index_unit
+  .span9.unit_info
+    %span 
+      = index_unit.name
+  .span3.actions
+    %a.btn{:href => unit_path(index_unit) } Edit
+    %a.btn Disable
+    %a.btn.btn-danger Delete

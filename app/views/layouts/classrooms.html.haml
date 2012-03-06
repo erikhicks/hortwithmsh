@@ -1,0 +1,19 @@
+!!! html
+
+%html
+  %head
+    %title Manage - Horticulture With Ms. H
+    = stylesheet_link_tag 'application_cms', :media => 'all'
+    = javascript_include_tag 'application_cms'
+    = csrf_meta_tags
+
+  %body
+    .container
+      .row
+        .span12
+          .alert.alert-success
+            %span 
+            %a.close{:href => '#'} &times;
+      .row
+        .span12
+          = yield

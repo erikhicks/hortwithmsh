@@ -1,0 +1,35 @@
+// Place all the styles related to the cms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  margin: 20px 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.alert {
+  display: none;
+}
+
+#classrooms, #units, #materials {
+  margin-bottom: 20px;
+}
+
+.index_classroom, .index_unit, .index_material {
+  margin-bottom: 10px;
+}
+
+.index_classroom .class_info span,
+.index_unit .unit_info span,
+.index_material .material_info span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  -moz-border-radius: 10px;
+  border-radius: 5px;
+  color: #000;
+  font-size: 18px;
+  display: block;
+}

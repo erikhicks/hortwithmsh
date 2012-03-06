@@ -1,0 +1,26 @@
+%h3 Manage Units
+%h1= @unit.name
+
+#materials
+  = render :partial => 'materials/index_material', :collection => @materials
+
+%button{:class => 'btn-primary btn-large', 'data-toggle' => 'modal', :href => '#new_material'}
+  %i{:class => 'icon-plus icon-white'}
+  Add New Material
+
+#new_material.modal.hide.fade.in
+  .modal-header
+    %a.close{'data-dismiss' => 'modal'} x
+    %h3 New document or link:
+  .modal-body
+    = form_tag materials_path, :remote => true, :multipart => true, :class => 'material_form', :id => 'material_form' do
+      %label Upload a file...
+      %input{:type => 'file', :name => 'file'}
+      %label Link URL
+      %input{:name => 'material[url]'}
+      %label Name
+      %input{:name => 'material[name]'}
+      %input{:type => 'hidden', :name => 'unit_id', :value => @unit.id}
+  .modal-footer
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'create_material_button'} Create
+    %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel

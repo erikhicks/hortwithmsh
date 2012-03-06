@@ -1,0 +1,8 @@
+.row.index_classroom
+  .span9.class_info
+    %span 
+      = index_classroom.name
+  .span3.actions
+    %a.btn{:href => classroom_path(index_classroom) } Edit
+    %a.btn Disable
+    %a.btn.btn-danger Delete
