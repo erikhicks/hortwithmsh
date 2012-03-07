@@ -17,9 +17,9 @@ window.Page =
   handleCalendarFeed: (results) ->
     entries = results.feed.entry
 
-    for entry in entries
-      console.log entry.getTitle().getText()
-      console.log entry.getTimes()[0]
+    # for entry in entries
+    #   console.log entry.getTitle().getText()
+    #   console.log entry.getTimes()[0]
 
   handleCalendarError: (results) ->
-    console.log results
+    # console.log results
