@@ -51,17 +51,30 @@ body a:hover {
 h1 {
 }
 
+
 .header {
   border-bottom: 1px solid #ccc;
   height: 150px;
   margin-bottom: 20px;
-  background-image: url('/images/greenhouse_large_2.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   box-shadow: 0 2px 5px #ccc;
+  overflow: hidden;
 }
 
-.header.page {
+.header .header-image {
+  width: 100%;
+  position: absolute;
+  height: 150px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.header img {
+  width: 100%;
+}
+
+.header.page, .header.page .header-image {
   height: 80px;
 }
 
@@ -76,6 +89,7 @@ h1 {
   padding-top: 40px;
   font-size: 44px;
   color: #fff;
+  z-index: 1;
 }
 
 .header.page h1 {
