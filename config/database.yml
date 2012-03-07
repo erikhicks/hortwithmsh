@@ -24,6 +24,6 @@ production:
   adapter: mysql2
   database: hortwithmsh
   user: root
-  passowrd: rooter
+  password: rooter
   pool: 5
   timeout: 5000
