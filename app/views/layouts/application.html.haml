@@ -16,12 +16,16 @@
         .span3
           %ul.nav.nav-pills.nav-stacked
             =nav_link 'About Me', 'about'
+            =nav_link 'FFA Plant Sale', 'plant-sale'
           %h3 Classes
           %ul.nav.nav-pills.nav-stacked
             =nav_link 'Plant Science', 'plant_science'
             =nav_link 'Plant Science II', 'plant_science_ii'
             =nav_link 'Floral Design', 'floral_design'
             =nav_link 'Career Choices', 'career_choices'
+
+          = render :partial => 'facebook_badge'
+
           -#
             %h3 Activities
             %ul.nav.nav-pills.nav-stacked

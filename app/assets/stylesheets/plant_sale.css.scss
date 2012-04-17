@@ -1,0 +1,44 @@
+.detail-item {
+	clear: both;
+	margin-bottom: 5px;
+	padding-bottom: 25px;
+}
+
+.info-label {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.info-label, .info-text {
+	width: 129px;
+	overflow: hidden;
+	float: left;
+}
+
+.info-text {
+	width: 300px;
+}
+
+.sale-item-group {
+	padding-top: 20px;
+	clear: both;
+}
+
+.sale-item-group ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sale-item-group ul li {
+	margin: 0;
+	padding: 5px 0 5px 23px;
+	font-size: 12px;
+	background-image: url("../images/icon-leaf.png");
+	background-position: 1px 5px;
+	background-repeat: no-repeat;
+}
+
+hr {
+	clear: both;
+}
