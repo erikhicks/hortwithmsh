@@ -4,13 +4,32 @@
 	padding-bottom: 25px;
 }
 
+.details {
+	float: left;
+	width: 460px;
+}
+
+.map {
+	float: left;
+	width: 240px;
+	padding-top: 10px;
+}
+
+.map img {
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 4px;
+}
+
 .info-label {
 	font-weight: bold;
 	vertical-align: top;
 }
 
 .info-label, .info-text {
-	width: 129px;
+	width: 160px;
 	overflow: hidden;
 	float: left;
 }

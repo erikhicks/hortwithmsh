@@ -7,7 +7,7 @@
     .container
       .row
         .span12
-          %h1 Monroe High School FFA Plant Sale
+          %h1 Monroe FFA Plant Sale
 
 - content_for :breadcrumbs do
   .row
@@ -19,32 +19,37 @@
         %li.active
           =link_to 'FFA Plant Sale', '/', :class => 'active'
 
-%h2 Spring is in the air!
-%h3 Come join us for our annual FFA Plant Sale!
+.details
 
-.detail-item
-  .info-label
-    Sale Dates:
-  .info-text
-    Every Friday and Saturday in May
-  
-.detail-item
-  .info-label
-    Friday Hours:
-  .info-text
-    3pm - 5pm on May 4, 11, 18, 25
+  %h2 Spring is in the air!
+  %h3 Come join us for our annual FFA Plant Sale!
 
-.detail-item
-  .info-label
-    Saturday Hours:
-  .info-text
-    10am - 3pm on May 5, 12, 19, 26
+  .detail-item
+    .info-label
+      Sale Dates:
+    .info-text
+      Every Friday and Saturday in May
+    
+  .detail-item
+    .info-label
+      Friday Hours:
+    .info-text
+      3pm - 5pm on May 4, 11, 18, 25
 
-.detail-item
-  .info-label
-    Location:
-  .info-text
-    MHS Greenhouse, 17001 Tester Rd Monroe, WA 98272
+  .detail-item
+    .info-label
+      Saturday Hours:
+    .info-text
+      10am - 3pm on May 5, 12, 19, 26
+
+  .detail-item
+    .info-label
+      Location:
+    .info-text
+      MHS Greenhouse, 17001 Tester Rd Monroe, WA 98272
+
+.map
+  = render :partial => 'plant_sale_map'
 
 .sale-item-group
   %h4

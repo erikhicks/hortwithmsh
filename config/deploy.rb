@@ -1,7 +1,6 @@
 require 'bundler/capistrano'
-
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
+
 set :rvm_ruby_string, 'ruby-1.9.2-p290'
 set :rvm_type, :root
 

@@ -8,6 +8,9 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
+    - if @meta_description
+      %meta{:name => 'description', :content => @meta_description }
+
   %body{:onload => 'Page.init();'}
     = yield :head
     .container

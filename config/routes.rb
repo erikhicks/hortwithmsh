@@ -21,7 +21,7 @@ HortwithmshV2::Application.routes.draw do
   match 'greenhouse' => 'main#greenhouse'
   match 'ffa' => 'main#ffa'
   match 'stem' => 'main#stem'
-  match 'plant-sale' => 'main#plant-sale'
+  match 'plant-sale' => 'main#plant_sale'
   match 'hydroponics' => 'main#hydroponics'
 
   # The priority is based upon order of creation:
