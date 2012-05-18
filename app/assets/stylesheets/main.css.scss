@@ -4,6 +4,20 @@
 
 // Twitter overrides
 
+.clearfix {
+  clear: both;
+}
+
+.hero-unit {
+  padding: 20px 30px 30px 30px
+}
+
+.hero-unit img {
+  float: right;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+}
+
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav > .open.active > a:hover {
   background-color: #81953f;
   border-color: #81953f;
