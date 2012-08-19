@@ -1,0 +1,94 @@
+#plant-identification{'data-role' => 'page', 'data-theme' => 'b'}
+  #header{'data-role' => 'header'}
+    %h1 Data Entry
+  #content{'data-role' => 'content'}
+    %h3
+      Plant Specimen Number
+    %p
+      Welcome to the field data entry tool for Plant Science.  Enter the plant identification number below to get started.
+      %input#plant-id-number{:type => 'number', :name => 'plant-id-number'}
+    %p
+      %a{:href => '#basic-info', 'data-role' => 'button', 'data-transition' => 'slide'} Let's Go
+  = render :partial => 'mobile_footer'
+
+#basic-info{'data-role' => 'page', 'data-theme' => 'b'}
+  #header{'data-role' => 'header', 'data-them' => 'b'}
+    %a{:href => '#plant-identification', 'data-icon' => 'delete', 'data-transition' => 'fade'} Cancel
+    %h1 Plant #42
+  #content{'data-role' => 'content'}
+    %h3 Asperagus Aethiopicus
+    %p
+      #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'c'}
+        %h3 About This Plant
+        %p
+          Asparagus aethiopicus, Sprenger's Asparagus, is a plant native to South Africa. Often used as an ornamental plant, it is considered an invasive weed in many locations.
+
+    %p
+      %h3 Update this specimen's data:
+
+      #basic-info-form
+        %p
+          %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
+          %input{:type => 'number', :name => 'greenhouse-temperature', :id => 'water-temperature'}
+        %p
+          %label{:for => 'water-temperature'} Water Temperature (&deg;F)
+          %input{:type => 'number', :name => 'water-temperature', :id => 'water-temperature'}
+        %p
+          %label{:for => 'light-itensity'} Light Intensity
+          %input{:type => 'number', :name => 'light-itensity', :id => 'light-itensity'}
+        %p
+          %label{:for => 'outside-temperature'} Outside Temperature (&deg;F)
+          %input{:type => 'number', :name => 'outside-temperature', :id => 'outside-temperature'}
+        %p
+          %label{:for => 'height'} Height (cm)
+          %input{:type => 'number', :name => 'height', :id => 'height'}
+        %p
+          %label{:for => 'root-color'} Root Color
+          %input{:type => 'text', :name => 'root-color', :id => 'root-color'}
+        %p
+          %label{:for => 'leaf-color'} Stem/Leaf Color
+          %input{:type => 'text', :name => 'leaf-color', :id => 'leaf-color'}
+        %p
+          #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'b'}
+            %h3 Flowers and Buds
+            %p
+              %label{:for => 'flower-blooming'} Has it bloomed?
+              %select{:name => 'flower-blooming', :id => 'flower-blooming', 'data-role' => 'slider'}
+                %option{:value => '0'} No
+                %option{:value => '1'} Yes
+        %p
+          #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'b'}
+            %h3 Fruit
+            %p
+              %label{:for => 'fruit-count'} How many fruits?
+              %input{:type => 'number', :name => 'fruit-count', :id => 'fruit-count'}
+            %p
+              %label{:for => 'fruit-size'} Size of largest fruit (cm):
+              %input{:type => 'number', :name => 'fruit-size', :id => 'fruit-size'}
+            %p
+              %label{:for => 'fruit-color'} Color of largest fruit:
+              %input{:type => 'color', :name => 'fruit-color', :id => 'fruit-color'}
+        %p
+          %label{:for => 'plant-loss'} Has there been any plant loss?
+          %select{:name => 'plant-loss', :id => 'plant-loss', 'data-role' => 'slider'}
+            %option{:value => '0'} No
+            %option{:value => '1'} Yes
+        %p
+          %label{:for => 'general-questions'} General Questions
+          %textarea{:name => 'general-quesitons', :id => 'general-questions'}
+        %p
+          %label{:for => 'observations'} Any Other Observations
+          %textarea{:name => 'observations', :id => 'observations'}
+        %p
+          %a{:href => '#done', 'data-role' => 'button', 'data-rel' => 'dialog', 'data-icon' => 'check', 'data-transition' => 'fade'} Save Specimen Data
+
+    = render :partial => 'mobile_footer'
+
+#done{'data-role' => 'page', 'data-theme' => 'b'}
+  #header{'data-role' => 'header'}
+    %h1 Nice work!
+  #content{'data-role' => 'content'}
+    %p
+      Data for specimen #42 Asparagus Aethiopicus as been updated.
+    %p
+      %a{:href => '#plant-identification', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant

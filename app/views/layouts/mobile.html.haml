@@ -1,0 +1,17 @@
+!!! html
+
+%html
+  %head
+    %title Mobile Field Data Entry
+    = stylesheet_link_tag 'application_mobile'
+    = javascript_include_tag 'http://www.google.com/jsapi'
+    = javascript_include_tag '//code.jquery.com/jquery-1.7.1.min.js'
+    = javascript_include_tag 'mobile'
+    = csrf_meta_tags
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
+    %meta{:name => 'apple-mobile-web-app-capable', :content => 'yes'}
+
+  %body
+    = yield
+  
+  = render :partial => 'main/google_tracking'

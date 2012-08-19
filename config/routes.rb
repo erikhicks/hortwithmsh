@@ -1,4 +1,6 @@
 HortwithmshV2::Application.routes.draw do
+  resources :subjects
+
   resources :materials
 
   resources :classrooms do
@@ -23,6 +25,8 @@ HortwithmshV2::Application.routes.draw do
   match 'stem' => 'main#stem'
   match 'plant-sale' => 'main#plant_sale'
   match 'hydroponics' => 'main#hydroponics'
+
+  match 'mobile' => 'mobile#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
