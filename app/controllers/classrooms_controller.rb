@@ -15,6 +15,7 @@ class ClassroomsController < ApplicationController
 
   def edit
     classroom = Classroom.find(params[:classroom_id])
+    
     classroom.update_attributes(params[:classroom])
     
     respond_to do |format|

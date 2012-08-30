@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304005544) do
+ActiveRecord::Schema.define(:version => 20120819175713) do
 
   create_table "classroom_units", :force => true do |t|
     t.integer  "classroom_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120304005544) do
     t.integer  "sort_order"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "subject_id"
   end
 
   create_table "materials", :force => true do |t|
@@ -36,6 +37,20 @@ ActiveRecord::Schema.define(:version => 20120304005544) do
     t.string   "name"
     t.string   "url"
     t.integer  "unit_id"
+  end
+
+  create_table "subject_classrooms", :force => true do |t|
+    t.integer  "classroom_id"
+    t.integer  "subject_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "units", :force => true do |t|

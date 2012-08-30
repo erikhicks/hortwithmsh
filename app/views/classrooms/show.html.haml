@@ -4,6 +4,8 @@
 = form_tag edit_classroom_path(@classroom), :remote => true, :id => 'classroom_form' do
   %label{:for => 'name'} Name
   %input{:class => 'span6', :name => 'classroom[name]', :id => 'classroom[name]', :value => @classroom.name}
+  %label{:for => 'name'} Subject
+  = select('classroom', 'subject_id', Subject.all.collect {|s| [s.name, s.id]}, {:include_blank => true})
 
 %h2 Units
 
