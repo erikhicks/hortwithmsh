@@ -26,7 +26,7 @@ class MainController < ApplicationController
           extname = material.extension
           mime_type = Mime::Type.lookup_by_extension(extname)
           content_type = mime_type.nil? ? "application/octet-stream" : mime_type.to_s
-          send_data "#{Rails.root}/public/materials/#{material.filename}", :type => content_type, :filename => "#{material.name}#{material.extension}"
+          send_file "#{Rails.root}/public/materials/#{material.filename}", :type => content_type, :filename => "#{material.name}#{material.extension}"
         end
       end
     end
