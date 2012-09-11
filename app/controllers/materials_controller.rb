@@ -1,4 +1,6 @@
 class MaterialsController < ApplicationController
+  before_filter :authenticate
+
   def create
     unit = Unit.find(params[:unit_id])
 

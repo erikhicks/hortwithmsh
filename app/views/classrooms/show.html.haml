@@ -1,4 +1,8 @@
-%h3 Manage Classes
+- content_for(:breadcrumb) do
+  %li
+    %span.divider= '/'
+    = @classroom.name
+
 %h1= @classroom.name
 
 = form_tag edit_classroom_path(@classroom), :remote => true, :id => 'classroom_form' do
@@ -20,11 +24,13 @@
 #add_unit.modal.hide.fade.in
   .modal-header
     %a.close{'data-dismiss' => 'modal'} x
-    %h3 Enter a name for this class:
+    %h3 Enter a name for this unit or choose an existing one:
   .modal-body
-    = form_tag classrooms_path + '/add_unit/', :remote => true, :id => 'add_unit_form' do
-      %label
+    = form_tag classroom_path(@classroom) + '/add_unit/', :remote => true, :id => 'add_unit_form' do
+      %label Existing Units
+      = select('unit', 'id', @all_units.collect {|s| [s.name, s.id]}, {:include_blank => true})
+      %label New Unit
       %input#unit_name{:name => 'name'}
   .modal-footer
-    %a{:href => '#', :class => 'btn btn-primary', :id => 'create_classroom_button'} Create
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'add_unit_submit_button'} Add
     %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel

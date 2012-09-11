@@ -1,0 +1,32 @@
+-content_for :title do
+  = "#{@classroom.name} with Ms. H. at Monroe High School"
+- content_for :head do
+  .header.page
+    .header-image
+      = image_tag 'greenhouse_large_2.jpg'
+    .container
+      .row
+        .span12
+          %h1= @classroom.name
+
+- content_for :breadcrumbs do
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', '/'
+          %span.divider /
+        %li.active
+          = @classroom.name
+
+- if @classroom.units.length > 0
+  .classroom-units
+    %h2 Unit Materials
+    = render :partial => 'main/unit', :collection => @classroom.units 
+/ - if @classroom.units.length > 0
+/   %h2 Unit Materials
+/   - @classroom.units.each do |unit|
+/     %h3= unit.name
+/     - unit.materials.each do |material|
+
+/ %p This is Ms. Hitchcock's 2nd year at Monroe High School teaching Plant Science. Ms. Hitchcock graduated from Washington State University in 2010 with a degree in Agricultural Education with an emphasis in Horticulture and Greenhouse Management. Work experiences include: Glendale Country Club in Bellevue, Wa, WSU Horticulture Club Greenhouses in Pullman, Wa, and the USDA Cool Season Food Legumes Project in Pullman, Wa. Ms. Hitchcock likes to garden and spend time in the greenhouse. She also likes to relax and watch funny tv shows like Parks and Recreation.

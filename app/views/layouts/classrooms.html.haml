@@ -9,6 +9,18 @@
 
   %body
     .container
+      .navbar
+        .navbar-inner
+          = link_to 'Classroom Manager', classrooms_path, :class => 'brand'
+          %ul.nav
+            = nav_link('Classrooms', classrooms_path)
+            = nav_link('Units', units_path)
+      .row
+        .span12
+          / %ul.breadcrumb
+          /   %li
+          /     = link_to 'Classrooms', classrooms_path
+          /   = yield(:breadcrumb)
       .row
         .span12
           .alert.alert-success

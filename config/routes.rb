@@ -5,6 +5,8 @@ HortwithmshV2::Application.routes.draw do
 
   resources :classrooms do
     post 'edit'
+    post 'add_unit'
+    post 'delete'
   end
 
   resources :units
@@ -13,6 +15,9 @@ HortwithmshV2::Application.routes.draw do
   get "main/index"
 
   match 'cms' => 'cms#index'
+
+  match 'classes/:name' => 'main#classroom'
+  match 'classes/:class_name/files/:file_name' => 'main#download'
 
   match 'plant_science' => 'main#plant_science'
   match 'plant_science_ii' => 'main#plant_science_ii'

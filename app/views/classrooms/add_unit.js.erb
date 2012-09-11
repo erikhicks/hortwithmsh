@@ -1,0 +1,3 @@
+Alert.show('<%=escape_javascript(@results[:message])%>');
+$('#units').html($("<%=escape_javascript(raw(@results[:units]))%>"));
+$('#add_unit').modal('hide')

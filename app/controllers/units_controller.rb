@@ -1,4 +1,6 @@
 class UnitsController < ClassroomsController
+  before_filter :authenticate
+
   def index
     @units = Unit.all
   end

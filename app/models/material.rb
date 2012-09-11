@@ -11,4 +11,16 @@ class Material < ActiveRecord::Base
     self.filename = filename
     self.save
   end
+
+  def download_path(class_path)
+    "/classes/#{class_path}/files/#{self.name_url}#{self.extension}"
+  end
+
+  def name_url
+    self.name.gsub(' ','-')
+  end
+
+  def extension
+    self.filename.match(/\.\w{3}/)[0]
+  end
 end
