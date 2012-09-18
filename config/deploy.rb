@@ -51,7 +51,7 @@ namespace :deploy do
     run "cd #{release_path}/ && bundle exec rake assets:precompile"  
   end
   task :material_symlink do
-    run "ln -nfs #{shared_path}/materials #{release_path}/public/materials"
+    run "ln -nfs #{release_path}/public/materials #{shared_path}/materials"
   end
 end
 
