@@ -3,6 +3,6 @@
     %span 
       = index_material.name
   .span3.actions
-    %a.btn{:href => materials_path(index_material) } Edit
-    %a.btn Disable
-    %a.btn.btn-danger Delete
+    // %a.btn{:href => materials_path(index_material) } Edit
+    // %a.btn Disable
+    = link_to('Delete', (material_path(index_material) + '/delete'), :remote => true, :method => 'post', :confirm => "Are you sure you want to delete #{index_material.name}?", :class => 'btn btn-danger')

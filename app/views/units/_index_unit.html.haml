@@ -4,5 +4,5 @@
       = index_unit.name
   .span3.actions
     %a.btn{:href => unit_path(index_unit) } Edit
-    %a.btn Disable
-    %a.btn.btn-danger Delete
+    //%a.btn Disable
+    = link_to('Delete', (unit_path(index_unit) + '/delete'), :remote => true, :method => 'post', :confirm => "Are you sure you want to delete #{index_unit.name}?", :class => 'btn btn-danger')

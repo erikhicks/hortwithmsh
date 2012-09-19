@@ -9,7 +9,13 @@ HortwithmshV2::Application.routes.draw do
     post 'delete'
   end
 
-  resources :units
+  resources :materials do
+    post 'delete'
+  end
+
+  resources :units do
+    post 'delete'
+  end
 
   get "cms/index"
   get "main/index"

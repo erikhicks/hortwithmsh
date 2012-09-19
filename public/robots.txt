@@ -5,5 +5,4 @@
 # Disallow: /
 
 User-Agent: *
-Disallow: /classes
 Disallow: /classes/*/files/*

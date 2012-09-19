@@ -23,4 +23,8 @@ class Material < ActiveRecord::Base
   def extension
     self.filename.match(/\.\w{3}/)[0]
   end
+
+  def delete_file
+    File.delete("#{Rails.root}/public/materials/#{filename}")
+  end
 end

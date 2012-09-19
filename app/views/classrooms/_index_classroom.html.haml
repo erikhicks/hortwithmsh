@@ -4,6 +4,6 @@
       = index_classroom.name
   .span3.actions
     %a.btn{:href => classroom_path(index_classroom) } Edit
-    %a.btn Disable
+    // %a.btn Disable
     = link_to('Delete', (classroom_path(index_classroom) + '/delete'), :remote => true, :method => 'post', :confirm => "Are you sure you want to delete #{index_classroom.name}?", :class => 'btn btn-danger')
     //%a.btn.btn-danger{:href => } Delete

@@ -1,4 +1,4 @@
-%h3 Manage Units
+%h3 Manage Unit Materials
 %h1= @unit.name
 
 #materials
@@ -11,13 +11,13 @@
 #new_material.modal.hide.fade.in
   .modal-header
     %a.close{'data-dismiss' => 'modal'} x
-    %h3 New document or link:
+    %h3 New Document:
   .modal-body
     = form_tag materials_path, :remote => true, :multipart => true, :class => 'material_form', :id => 'material_form' do
       %label Upload a file...
       %input{:type => 'file', :name => 'file'}
-      %label Link URL
-      %input{:name => 'material[url]'}
+      / %label Link URL
+      / %input{:name => 'material[url]'}
       %label Name
       %input{:name => 'material[name]'}
       %input{:type => 'hidden', :name => 'unit_id', :value => @unit.id}

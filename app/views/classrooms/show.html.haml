@@ -8,8 +8,20 @@
 = form_tag edit_classroom_path(@classroom), :remote => true, :id => 'classroom_form' do
   %label{:for => 'name'} Name
   %input{:class => 'span6', :name => 'classroom[name]', :id => 'classroom[name]', :value => @classroom.name}
-  %label{:for => 'name'} Subject
-  = select('classroom', 'subject_id', Subject.all.collect {|s| [s.name, s.id]}, {:include_blank => true})
+  %br
+  &nbsp;
+  %label{:for => 'introduction'} Intro Header
+  %textarea{:class => 'span6', :name => 'classroom[introduction]', :id => 'classroom[introduction]', :value => @classroom.introduction}
+    = @classroom.introduction
+  %label{:for => 'description'} Description
+  %textarea{:class => 'span6', :name => 'classroom[description]', :id => 'classroom[description]', :value => @classroom.description}
+    = @classroom.description
+  / %label{:for => 'name'} Subject
+  / = select('classroom', 'subject_id', Subject.all.collect {|s| [s.name, s.id]}, {:include_blank => true})
+
+%button{:class => 'btn btn-primary', :id => 'save_changes'} Save Changes 
+%br
+&nbsp;
 
 %h2 Units
 
@@ -19,7 +31,6 @@
 %button{:class => 'btn btn-primary', :id => 'add_unit_button', 'data-toggle' => 'modal', :href => '#add_unit'} 
   %i{:class => 'icon-plus icon-white'}
   Add Unit
-%button{:class => 'btn btn-primary', :id => 'save_changes'} Save Changes 
 
 #add_unit.modal.hide.fade.in
   .modal-header

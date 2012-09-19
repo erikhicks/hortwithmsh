@@ -14,4 +14,17 @@ class MaterialsController < ApplicationController
       format.js { @results = {:message => 'New unit material added.', :materials => materials} }
     end
   end
+
+  def delete
+    material = Material.find(params[:material_id])
+    unit = material.unit
+
+    material.delete_file
+    unit.materials.delete(material)
+    materials_html = render_to_string(:partial => 'materials/index_material', :collection => unit.materials, :layout => false)
+
+    respond_to do |format|
+      format.js { @results = {:message => 'Unit updated, material removed.', :materials => materials_html} }
+    end
+  end
 end

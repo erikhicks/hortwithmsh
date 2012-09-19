@@ -1,2 +1,2 @@
 Alert.show('<%=escape_javascript(@results[:message])%>');
-$('#classrooms').html($("<%=escape_javascript(raw(@results[:classrooms]))%>"));
+$('#classrooms').html($("<%=escape_javascript(raw(@results[:classrooms].strip))%>"));
