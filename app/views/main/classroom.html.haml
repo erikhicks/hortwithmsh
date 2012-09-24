@@ -23,7 +23,7 @@
   %h3= @classroom.introduction
 
 - if @classroom.description.to_s.length > 0
-  %p= @classroom.description
+  %p= @classroom.html_description
 
 - if @classroom.units.length > 0
   .classroom-units

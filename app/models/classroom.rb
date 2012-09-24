@@ -14,4 +14,8 @@ class Classroom < ActiveRecord::Base
   def name_url
     return name.downcase.gsub(' ','-')
   end
+
+  def html_description
+    return self.description.html_safe
+  end
 end
