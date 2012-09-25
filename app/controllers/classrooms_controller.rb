@@ -61,16 +61,20 @@ class ClassroomsController < ApplicationController
 
   def sort
     params[:list].each_with_index do |item, index|
-      case params[:type]
-      when 'classrooms'
-        Classroom.find(item.to_i).update_attributes(:sort => index)
-      when 'materials'
-        Material.find(item.to_i).update_attributes(:sort => index)
-      when 'units'
-        Unit.find(item.to_i).update_attributes(:sort => index)
+      case (params[:type])
+        when 'classrooms'
+          sortable_object = Classroom.find(item.to_i)
+          print 'classrooms'
+        when 'materials'
+          sortable_object = Material.find(item.to_i)
+          print 'materials'
+        when 'units'
+          sortable_object = Unit.find(item.to_i)
+          print 'units'
       end
+      sortable_object.sort = index
+      sortable_object.save
     end
-
     render :nothing => true
   end
 end
