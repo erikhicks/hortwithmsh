@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919045022) do
+ActiveRecord::Schema.define(:version => 20120925005610) do
 
   create_table "classroom_units", :force => true do |t|
     t.integer  "classroom_id"
@@ -23,22 +23,24 @@ ActiveRecord::Schema.define(:version => 20120919045022) do
   create_table "classrooms", :force => true do |t|
     t.string   "name"
     t.integer  "sort_order"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "subject_id"
     t.text     "description"
     t.text     "introduction"
+    t.integer  "sort",         :default => 0
   end
 
   create_table "materials", :force => true do |t|
     t.string   "filename"
     t.boolean  "enabled"
     t.integer  "sort_order"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "name"
     t.string   "url"
     t.integer  "unit_id"
+    t.integer  "sort",       :default => 0
   end
 
   create_table "subject_classrooms", :force => true do |t|
@@ -59,8 +61,9 @@ ActiveRecord::Schema.define(:version => 20120919045022) do
     t.string   "name"
     t.integer  "sort_order"
     t.boolean  "enabled"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "sort",       :default => 0
   end
 
 end

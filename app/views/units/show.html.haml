@@ -1,7 +1,7 @@
 %h3 Manage Unit Materials
 %h1= @unit.name
 
-#materials
+#materials.sortable
   = render :partial => 'materials/index_material', :collection => @materials
 
 %button{:class => 'btn-primary btn-large', 'data-toggle' => 'modal', :href => '#new_material'}

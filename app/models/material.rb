@@ -1,6 +1,8 @@
 class Material < ActiveRecord::Base
   belongs_to :unit
 
+  default_scope order("sort asc")
+
   def save_file(options={})
     extension = options[:file].original_filename.match(/\.\w{3}/)[0]
     filename = "#{UUIDTools::UUID.timestamp_create().to_s}#{extension}"

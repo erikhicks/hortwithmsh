@@ -58,4 +58,19 @@ class ClassroomsController < ApplicationController
       format.js { @results = {:message => 'Classrooms updated.', :classrooms => classrooms_html} }
     end
   end
+
+  def sort
+    params[:list].each_with_index do |item, index|
+      case params[:type]
+      when 'classrooms'
+        Classroom.find(item.to_i).update_attributes(:sort => index)
+      when 'materials'
+        Material.find(item.to_i).update_attributes(:sort => index)
+      when 'units'
+        Unit.find(item.to_i).update_attributes(:sort => index)
+      end
+    end
+
+    render :nothing => true
+  end
 end

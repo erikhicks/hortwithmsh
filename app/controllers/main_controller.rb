@@ -10,7 +10,7 @@ class MainController < ApplicationController
   end
 
   def get_classrooms
-    @classrooms = Classroom.find(:all)
+    @classrooms = Classroom.all
   end
 
   def classroom

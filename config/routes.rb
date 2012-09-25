@@ -17,10 +17,7 @@ HortwithmshV2::Application.routes.draw do
     post 'delete'
   end
 
-  get "cms/index"
-  get "main/index"
-
-  match 'cms' => 'cms#index'
+  post 'classrooms/sort' => 'classrooms#sort'
 
   match 'classes/:name' => 'main#classroom'
   match 'classes/:class_name/files/:file_name' => 'main#download'
