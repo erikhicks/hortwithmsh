@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require main
+//= require blog
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-dropdown

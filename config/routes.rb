@@ -28,11 +28,9 @@ HortwithmshV2::Application.routes.draw do
   match 'career_choices' => 'main#career_choices'
 
   match 'about' => 'main#about'
-  match 'greenhouse' => 'main#greenhouse'
   match 'ffa' => 'main#ffa'
   match 'stem' => 'main#stem'
   match 'plant-sale' => 'main#plant_sale'
-  match 'hydroponics' => 'main#hydroponics'
 
   match 'mobile' => 'mobile#index'
 

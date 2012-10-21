@@ -1,0 +1,18 @@
+#blog {
+  article {
+    h1 {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0 0 0 0;
+    }
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    &:last-child {
+      border: none;
+    }
+    span {
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
+  }
+}

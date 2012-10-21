@@ -1,0 +1,25 @@
+-content_for :title do
+  = "STEM Hydroponics Program: #{main_title}"
+- content_for :head do
+  .header.page
+    .header-image
+      = image_tag 'greenhouse_large_2.jpg'
+    .container
+      .row
+        .span12
+          %h1 STEM Hydroponics Program
+
+- content_for :breadcrumbs do
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', '/'
+          %span.divider /
+        %li.active
+          =link_to 'STEM Hydroponics Program', '/', :class => 'active'
+
+%h3 Latest Posts From Our Blog
+
+#blog
+  
