@@ -1,6 +1,11 @@
 class MainController < ApplicationController
   before_filter :get_classrooms
 
+  def about
+    about_text = Setting.find_by_key('about')
+    @about_text = about_text.nil? ? '' : about_text.value
+  end
+
   def index
   	@meta_description = 'Horticulture and Plant Science with Ms. Hitchcock at Monroe High School, Monroe, WA.  Learn about Ms. Hitchcock\'s curriculum, FFA activities and STEM program grant.'
   end
