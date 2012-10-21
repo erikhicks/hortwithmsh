@@ -1,0 +1,4 @@
+Alert.show('<%=escape_javascript(@results[:message])%>');
+$('#materials').html($("<%=escape_javascript(raw(@results[:materials].strip))%>"));
+$('.modal').modal('hide');
+CMS.init();

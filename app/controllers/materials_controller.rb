@@ -27,4 +27,19 @@ class MaterialsController < ApplicationController
       format.js { @results = {:message => 'Unit updated, material removed.', :materials => materials_html} }
     end
   end
+
+  def edit_name
+    material = Material.find(params[:material_id])
+
+    material.name = params[:material_name]
+    material.save
+
+    unit = Unit.find(params[:unit_id])
+
+    materials_html = render_to_string(:partial => 'materials/index_material', :collection => unit.materials, :layout => false)
+
+    respond_to do |format|
+      format.js { @results = {:message => 'Unit material renamed.', :materials => materials_html} }
+    end
+  end
 end

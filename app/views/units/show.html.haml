@@ -24,3 +24,16 @@
   .modal-footer
     %a{:href => '#', :class => 'btn btn-primary', :id => 'create_material_button'} Create
     %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel
+
+#edit_material.modal.hide.fade.in
+  .modal-header
+    %a.close{'data-dismiss' => 'modal'} x
+    %h3 Edit the name for this material:
+  .modal-body
+    = form_tag materials_path, :remote => true, :multipart => true, :class => 'material_form', :id => 'rename_material_form' do
+      %input{:name => 'material_name', :id => 'material_name'}
+      %input{:type => 'hidden', :name => 'material_id', :id => 'rename_material_id'}
+      %input{:type => 'hidden', :name => 'unit_id', :value => @unit.id}
+  .modal-footer
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'rename_material_button'} Rename
+    %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel

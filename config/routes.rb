@@ -11,6 +11,7 @@ HortwithmshV2::Application.routes.draw do
 
   resources :materials do
     post 'delete'
+    post 'edit_name'
   end
 
   resources :units do
