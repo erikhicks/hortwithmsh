@@ -27,6 +27,6 @@ class Material < ActiveRecord::Base
   end
 
   def delete_file
-    File.delete("#{Rails.root}/public/materials/#{filename}")
+    File.delete("#{Rails.root}/public/materials/#{filename}") if self.filename
   end
 end
