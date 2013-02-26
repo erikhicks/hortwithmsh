@@ -11,5 +11,9 @@ window.MaterialForm =
       $('#material_form').submit()
       return false
 
+    $('#create_material_link_button').click ->
+      $('#material_form_link').submit()
+      return false
+
 $(document).ready ->
   MaterialForm.initialize() if $('#material_form').length > 0

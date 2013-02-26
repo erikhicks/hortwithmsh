@@ -8,21 +8,38 @@
   %i{:class => 'icon-plus icon-white'}
   Add New Material
 
+%button{:class => 'btn-primary btn-large', 'data-toggle' => 'modal', :href => '#new_material_link'}
+  %i{:class => 'icon-plus icon-white'}
+  Add New Link
+
 #new_material.modal.hide.fade.in
   .modal-header
     %a.close{'data-dismiss' => 'modal'} x
     %h3 New Document:
   .modal-body
     = form_tag materials_path, :remote => true, :multipart => true, :class => 'material_form', :id => 'material_form' do
-      %label Upload a file...
-      %input{:type => 'file', :name => 'file'}
-      / %label Link URL
-      / %input{:name => 'material[url]'}
       %label Name
       %input{:name => 'material[name]'}
       %input{:type => 'hidden', :name => 'unit_id', :value => @unit.id}
+      %label Upload a file...
+      %input{:type => 'file', :name => 'file'}
   .modal-footer
     %a{:href => '#', :class => 'btn btn-primary', :id => 'create_material_button'} Create
+    %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel
+
+#new_material_link.modal.hide.fade.in
+  .modal-header
+    %a.close{'data-dismiss' => 'modal'} x
+    %h3 New Link:
+  .modal-body
+    = form_tag materials_path, :remote => true, :class => 'material_form_link', :id => 'material_form_link' do
+      %label Name
+      %input{:name => 'material[name]'}
+      %label Link URL
+      %input{:name => 'material[url]', :size => 200}
+      %input{:type => 'hidden', :name => 'unit_id', :value => @unit.id}
+  .modal-footer
+    %a{:href => '#', :class => 'btn btn-primary', :id => 'create_material_link_button'} Create
     %a{:href => '#', :class => 'btn', 'data-dismiss' => 'modal'} Cancel
 
 #edit_material.modal.hide.fade.in

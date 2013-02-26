@@ -5,7 +5,9 @@ class MaterialsController < ApplicationController
     unit = Unit.find(params[:unit_id])
 
     new_material = Material.new(params[:material])
-    new_material.save_file({:file => params[:file]})
+    
+    new_material.save_file({:file => params[:file]}) if params[:file]
+    new_material.url = params[:url] if params[:url]
 
     unit.materials << new_material
     materials = render_to_string(:partial => 'index_material', :collection => unit.materials)

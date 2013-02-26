@@ -1,3 +1,8 @@
-%li
-  %i.icon-file
-  = link_to unit_material.name, unit_material.download_path(@classroom.name_url)
+- if !unit_material.url
+  %li
+    %i.icon-file
+    = link_to unit_material.name, unit_material.download_path(@classroom.name_url)
+- else
+  %li
+    %i.icon-globe
+    = link_to unit_material.name, get_valid_url(unit_material.url), :title => "Link to #{unit_material.name}"

@@ -1,7 +1,7 @@
 .row.index_material{'data-id' => index_material.id}
   .span9.material_info
     %span 
-      = index_material.name
+      = helper_linked_name(index_material)
   .span3.actions
     %a.btn.edit-material{'data-toggle' => 'modal', :href => '#edit_material', 'data-id' => index_material.id, 'data-name' => index_material.name} Edit Name
     // %a.btn Disable
