@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
+load "config/recipes"
 
 set :rvm_ruby_string, 'ruby-1.9.2-p290'
 set :rvm_type, :root
