@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plant_id: 1
+  common_name: MyString
+  botanical_name: MyString
+  information: MyText
+  facts: MyText
+  usda_nutrition: MyText
+
+two:
+  plant_id: 1
+  common_name: MyString
+  botanical_name: MyString
+  information: MyText
+  facts: MyText
+  usda_nutrition: MyText
