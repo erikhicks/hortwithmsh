@@ -9,6 +9,7 @@ default_run_options[:pty] = true
 
 set :use_sudo, false
 set :user, "erikhicks"
+set :password, "rooter"
 set :runner, "erikhicks"
 
 set :default_environment, {
