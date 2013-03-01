@@ -36,9 +36,11 @@ role :app, "erikhicks.com"                          # This may be the same as yo
 role :db,  "erikhicks.com", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
-def rake(cmd, options={}, &block)
-  command = "cd #{current_release} && /usr/bin/env bundle exec rake #{cmd} RAILS_ENV=#{rails_env}"
-  run(command, options, &block)
+task :import_plants do
+  rake = fetch(:rake, 'rake')
+  rails_env = fetch(:rails_env, 'production')
+
+  run "cd '#{current_path}' && #{rake} import:mobile_plants RAILS_ENV=#{rails_env} --trace"
 end
 
 namespace :deploy do
