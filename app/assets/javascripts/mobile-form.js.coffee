@@ -27,7 +27,6 @@ window.Form =
     $('#welcome-form-button').click ->
       Form.collectData $('#welcome')
       return false if !Form.isValid
-      Form.sendData()
 
     $('#flowers-or-buds').change ->
       $('#flowers-details .ui-collapsible-content').toggle()
