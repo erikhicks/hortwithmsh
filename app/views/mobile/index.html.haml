@@ -1,9 +1,21 @@
-#greenhouse-info{'data-role' => 'page', 'data-theme' => 'b'}
+#welcome{'data-role' => 'page', 'data-theme' => 'b'}
   #header{'data-role' => 'header'}
-    %h1 Greenhouse Information
+    %h1 Welcome
   #content{'data-role' => 'content'}
     %h3
-      Enter information about the greenhouse to get started.
+      Enter your name to get started.
+    %p
+      %label{:for => 'student-name'} Your name is...
+      %input{:type => 'text', :name => 'student-name', :id => 'student-name'}
+    %p
+      %a#welcome-form-button{:href => '#greenhouse-info', 'data-role' => 'button', 'data-transition' => 'slide'} To the Greenhouse!
+  = render :partial => 'mobile_footer'
+
+#greenhouse-info{'data-role' => 'page', 'data-theme' => 'b'}
+  #header{'data-role' => 'header'}
+    %a{:href => '#welcome', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
+    %h1 Greenhouse
+  #content{'data-role' => 'content'}
     %p
       %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
       %input{:type => 'number', :name => 'greenhouse-temperature', :id => 'greenhouse-temperature'}
@@ -41,10 +53,11 @@
 
 #basic-info{'data-role' => 'page', 'data-theme' => 'b'}
   #header{'data-role' => 'header', 'data-them' => 'b'}
-    %a{:href => '#greenhouse-info', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
-    %h1 Unknown Plant
+    %a{:href => '#plant-identification', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
+    %h1.plant-name Unknown Plant
   #content{'data-role' => 'content'}
-    %h3 Unknown Plant
+    %h3.plant-name Unknown Plant
+    %h4.plant-botanical-name 
     %p
       #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'c'}
         %h3 About This Plant
@@ -65,8 +78,11 @@
           %label{:for => 'height'} Plant Height (cm)
           %input{:type => 'number', :name => 'height', :id => 'height'}
         %p
-          %label{:for => 'leaves-count'} Number of Leaves Present (cm)
-          %input{:type => 'text', :name => 'leaves-count', :id => 'leaves-count'}
+          %label{:for => 'leaves-count'} Number of Leaves Present
+          %input{:type => 'number', :name => 'leaves-count', :id => 'leaves-count'}
+        %p
+          %label{:for => 'leaves-size'} Length of Largest Leaf (cm)
+          %input{:type => 'number', :name => 'leaves-size', :id => 'leaves-size'}
         %p
           %label{:for => 'leaf-color'} Stem/Leaf Color
           %input{:type => 'text', :name => 'leaf-color', :id => 'leaf-color'}
@@ -84,7 +100,28 @@
               %input.optional{:type => 'number', :name => 'spent-flower-count', :id => 'spent-flower-count'}
             %p
               %label{:for => 'flower-color'} Color of Largest Flower
-              %input.optional{:type => 'color', :name => 'flower-color', :id => 'flower-color'}
+              %input.optional{:type => 'text', :name => 'flower-color', :id => 'flower-color'}
+        %p
+          %label{:for => 'fruits'} Are there any fruits?
+          %select{:name => 'fruits', :id => 'fruits', 'data-role' => 'slider'}
+            %option{:value => '0'} No
+            %option{:value => '1'} Yes
+          #fruits-details{'data-role' => 'collapsible', 'data-theme' => 'b'}
+            %p
+              %label{:for => 'immature-fruit-count'} Number of Immature Fruits
+              %input.optional{:type => 'number', :name => 'immature-fruit-count', :id => 'immature-fruit-count'}
+            %p
+              %label{:for => 'immature-fruit-color'} Color of Immature Fruits
+              %input.optional{:type => 'text', :name => 'immature-fruit-color', :id => 'immature-fruit-color'}
+            %p
+              %label{:for => 'mature-fruit-count'} Number of Mature Fruits
+              %input.optional{:type => 'number', :name => 'mature-fruit-count', :id => 'mature-fruit-count'}
+            %p
+              %label{:for => 'mature-fruit-color'} Color of Mature Fruits
+              %input.optional{:type => 'text', :name => 'mature-fruit-color', :id => 'mature-fruit-color'}
+            %p
+              %label{:for => 'fruit-diameter'} Diameter of Largest Fruit (cm)
+              %input.optional{:type => 'number', :name => 'fruit-diameter', :id => 'fruit-diameter'}
         %p
           %label{:for => 'plant-loss'} Has there been any plant loss?
           %select{:name => 'plant-loss', :id => 'plant-loss', 'data-role' => 'slider'}
@@ -103,6 +140,8 @@
     %h1 Nice work!
   #content{'data-role' => 'content'}
     %p
-      Data for specimen #42 Asparagus Aethiopicus as been updated.
+      Data for 
+      %span.plant-name
+      has been updated.
     %p
-      %a{:href => '#greenhouse-info', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant
+      %a#form-complete-button{:href => '#welcome', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant

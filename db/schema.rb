@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021215049) do
+ActiveRecord::Schema.define(:version => 20130301063443) do
 
   create_table "classroom_units", :force => true do |t|
     t.integer  "classroom_id"
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(:version => 20121021215049) do
     t.string   "url"
     t.integer  "unit_id"
     t.integer  "sort",       :default => 0
+  end
+
+  create_table "mobile_plant_data", :force => true do |t|
+    t.integer  "plant_id"
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mobile_plants", :force => true do |t|
+    t.integer  "plant_id"
+    t.string   "common_name"
+    t.string   "botanical_name"
+    t.text     "information"
+    t.text     "facts"
+    t.text     "usda_nutrition"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "settings", :force => true do |t|
