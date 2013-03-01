@@ -34,6 +34,7 @@ HortwithmshV2::Application.routes.draw do
   match 'plant-sale' => 'main#plant_sale'
 
   match 'mobile' => 'mobile#index'
+  post 'mobile/post-plant-data' => 'mobile#post_plant_data'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

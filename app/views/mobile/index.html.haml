@@ -1,86 +1,100 @@
+#greenhouse-info{'data-role' => 'page', 'data-theme' => 'b'}
+  #header{'data-role' => 'header'}
+    %h1 Greenhouse Information
+  #content{'data-role' => 'content'}
+    %h3
+      Enter information about the greenhouse to get started.
+    %p
+      %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
+      %input{:type => 'number', :name => 'greenhouse-temperature', :id => 'greenhouse-temperature'}
+    %p
+      %label{:for => 'outside-temperature'} Outside Temperature (&deg;F)
+      %input{:type => 'number', :name => 'outside-temperature', :id => 'outside-temperature'}
+    %p
+      %label{:for => 'relative-humidity'} Light Intensity
+      %input{:type => 'number', :name => 'light-itensity', :id => 'light-itensity'}
+    %p
+      %label{:for => 'relative-humidity'} Relative Humidity
+      %input{:type => 'number', :name => 'relative-humidity', :id => 'relative-humidity'}
+    %p
+      %label{:for => 'air-circulation-present'} Air Circulation Present?
+      %select{:name => 'air-circulation-present', :id => 'air-circulation-present', 'data-role' => 'slider'}
+        %option{:value => '0'} No
+        %option{:value => '1'} Yes
+    %p
+      %a#greenhouse-info-button{:href => '#plant-identification', 'data-role' => 'button', 'data-transition' => 'slide'} Let's Go
+  = render :partial => 'mobile_footer'
+
 #plant-identification{'data-role' => 'page', 'data-theme' => 'b'}
   #header{'data-role' => 'header'}
-    %h1 Data Entry
+    %a{:href => '#greenhouse-info', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
+    %h1 Plant Identification
   #content{'data-role' => 'content'}
     %h3
       Plant Specimen Number
     %p
-      Welcome to the field data entry tool for Plant Science.  Enter the plant identification number below to get started.
+      Now let's get some information about your plant.  Enter the plant identification number.
       %input#plant-id-number{:type => 'number', :name => 'plant-id-number'}
     %p
-      %a{:href => '#basic-info', 'data-role' => 'button', 'data-transition' => 'slide'} Let's Go
+      %a#plant-identification-button{:href => '#basic-info', 'data-role' => 'button', 'data-transition' => 'slide'} Collect Data
   = render :partial => 'mobile_footer'
 
 #basic-info{'data-role' => 'page', 'data-theme' => 'b'}
   #header{'data-role' => 'header', 'data-them' => 'b'}
-    %a{:href => '#plant-identification', 'data-icon' => 'delete', 'data-transition' => 'fade'} Cancel
-    %h1 Plant #42
+    %a{:href => '#greenhouse-info', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
+    %h1 Unknown Plant
   #content{'data-role' => 'content'}
-    %h3 Asperagus Aethiopicus
+    %h3 Unknown Plant
     %p
       #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'c'}
         %h3 About This Plant
         %p
-          Asparagus aethiopicus, Sprenger's Asparagus, is a plant native to South Africa. Often used as an ornamental plant, it is considered an invasive weed in many locations.
+          No Data.
 
     %p
       %h3 Update this specimen's data:
 
       #basic-info-form
         %p
-          %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
-          %input{:type => 'number', :name => 'greenhouse-temperature', :id => 'water-temperature'}
+          %label{:for => 'nutrient-solution-temperature'} Nutrient Solution Temperature (&deg;F)
+          %input{:type => 'number', :name => 'nutrient-solution-temperature', :id => 'nutrient-solution-temperature'}
         %p
-          %label{:for => 'water-temperature'} Water Temperature (&deg;F)
-          %input{:type => 'number', :name => 'water-temperature', :id => 'water-temperature'}
+          %label{:for => 'growing-media-quality'} What Quality is the Growing Media?
+          %input{:type => 'text', :name => 'growing-media-quality', :id => 'growing-media-quality'}
         %p
-          %label{:for => 'light-itensity'} Light Intensity
-          %input{:type => 'number', :name => 'light-itensity', :id => 'light-itensity'}
-        %p
-          %label{:for => 'outside-temperature'} Outside Temperature (&deg;F)
-          %input{:type => 'number', :name => 'outside-temperature', :id => 'outside-temperature'}
-        %p
-          %label{:for => 'height'} Height (cm)
+          %label{:for => 'height'} Plant Height (cm)
           %input{:type => 'number', :name => 'height', :id => 'height'}
         %p
-          %label{:for => 'root-color'} Root Color
-          %input{:type => 'text', :name => 'root-color', :id => 'root-color'}
+          %label{:for => 'leaves-count'} Number of Leaves Present (cm)
+          %input{:type => 'text', :name => 'leaves-count', :id => 'leaves-count'}
         %p
           %label{:for => 'leaf-color'} Stem/Leaf Color
           %input{:type => 'text', :name => 'leaf-color', :id => 'leaf-color'}
         %p
-          #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'b'}
-            %h3 Flowers and Buds
+          %label{:for => 'flowers-or-buds'} Are there flowers/buds?
+          %select{:name => 'flowers-or-buds', :id => 'flowers-or-buds', 'data-role' => 'slider'}
+            %option{:value => '0'} No
+            %option{:value => '1'} Yes
+          #flowers-details{'data-role' => 'collapsible', 'data-theme' => 'b'}
             %p
-              %label{:for => 'flower-blooming'} Has it bloomed?
-              %select{:name => 'flower-blooming', :id => 'flower-blooming', 'data-role' => 'slider'}
-                %option{:value => '0'} No
-                %option{:value => '1'} Yes
-        %p
-          #basic-info-description{'data-role' => 'collapsible', 'data-theme' => 'b'}
-            %h3 Fruit
+              %label{:for => 'flower-count'} Number of Flowers
+              %input.optional{:type => 'number', :name => 'flower-count', :id => 'flower-count'}
             %p
-              %label{:for => 'fruit-count'} How many fruits?
-              %input{:type => 'number', :name => 'fruit-count', :id => 'fruit-count'}
+              %label{:for => 'spent-flower-count'} Number of Spent Flowers
+              %input.optional{:type => 'number', :name => 'spent-flower-count', :id => 'spent-flower-count'}
             %p
-              %label{:for => 'fruit-size'} Size of largest fruit (cm):
-              %input{:type => 'number', :name => 'fruit-size', :id => 'fruit-size'}
-            %p
-              %label{:for => 'fruit-color'} Color of largest fruit:
-              %input{:type => 'color', :name => 'fruit-color', :id => 'fruit-color'}
+              %label{:for => 'flower-color'} Color of Largest Flower
+              %input.optional{:type => 'color', :name => 'flower-color', :id => 'flower-color'}
         %p
           %label{:for => 'plant-loss'} Has there been any plant loss?
           %select{:name => 'plant-loss', :id => 'plant-loss', 'data-role' => 'slider'}
             %option{:value => '0'} No
             %option{:value => '1'} Yes
         %p
-          %label{:for => 'general-questions'} General Questions
-          %textarea{:name => 'general-quesitons', :id => 'general-questions'}
-        %p
           %label{:for => 'observations'} Any Other Observations
-          %textarea{:name => 'observations', :id => 'observations'}
+          %textarea.optional{:name => 'observations', :id => 'observations'}
         %p
-          %a{:href => '#done', 'data-role' => 'button', 'data-rel' => 'dialog', 'data-icon' => 'check', 'data-transition' => 'fade'} Save Specimen Data
+          %a#basic-info-button{:href => '#done', 'data-role' => 'button', 'data-rel' => 'dialog', 'data-icon' => 'check', 'data-transition' => 'fade'} Save Specimen Data
 
     = render :partial => 'mobile_footer'
 
@@ -91,4 +105,4 @@
     %p
       Data for specimen #42 Asparagus Aethiopicus as been updated.
     %p
-      %a{:href => '#plant-identification', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant
+      %a{:href => '#greenhouse-info', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant
