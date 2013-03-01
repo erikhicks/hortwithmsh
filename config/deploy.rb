@@ -1,6 +1,5 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-load "config/recipes"
 
 set :rvm_ruby_string, 'ruby-1.9.2-p290'
 set :rvm_type, :root
@@ -37,6 +36,10 @@ role :app, "erikhicks.com"                          # This may be the same as yo
 role :db,  "erikhicks.com", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
+def rake(cmd, options={}, &block)
+  command = "cd #{current_release} && /usr/bin/env bundle exec rake #{cmd} RAILS_ENV=#{rails_env}"
+  run(command, options, &block)
+end
 
 namespace :deploy do
   task :start do
