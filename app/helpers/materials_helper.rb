@@ -1,6 +1,6 @@
 module MaterialsHelper
   def helper_linked_name(material)
-    return link_to material.name, get_valid_url(material.url) if material.url
+    return link_to material.name, get_valid_url(material.url) if !material.url.to_s.empty?
     return material.name
   end
 
