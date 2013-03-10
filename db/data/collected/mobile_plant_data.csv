@@ -1,3 +1,0 @@
-date,plant_id,plant_name,student-name,greenhouse-temperature,outside-temperature,light-itensity,relative-humidity,air-circulation-present,nutrient-solution-temperature,growing-media-quality,height,leaves-count,leaves-size,leaf-color,flower-count,spent-flower-count,flower-color,immature-fruit-count,immature-fruit-color,mature-fruit-count,mature-fruit-color,fruit-diameter,observations,flowers-or-buds,fruits,plant-loss,light-intensity
-2013-03-10 02:09:14,1,Smooth Leaf Kale,erik,1,1,1,1,No,1,1,1,1,1,1,"","","","","","","","","",No,No,No,""
-2013-03-10 03:40:27,2,Smooth Leaf Kale,erik,72,64,"",93,Yes,7,5,73,3,43,green,"","","","","","","","","",No,No,No,5
