@@ -17,7 +17,7 @@
     %h1 Greenhouse
     %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
   #status{'data-role' => 'header', 'data-theme' => 'c'}
-    %h1 Student Name
+    %h1.student-name-display 
   #content{'data-role' => 'content'}
     %p
       %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
@@ -46,7 +46,7 @@
     %h1 Plant Identification
     %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
   #status{'data-role' => 'header', 'data-theme' => 'c'}
-    %h1 Student Name
+    %h1.student-name-display 
   #content{'data-role' => 'content'}
     %h3
       Plant Specimen Number
@@ -63,7 +63,7 @@
     %h1.plant-name Unknown Plant
     %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
   #status{'data-role' => 'header', 'data-theme' => 'c'}
-    %h1 Student Name
+    %h1.student-name-display 
   #content{'data-role' => 'content'}
     %h3.plant-name Unknown Plant
     %h4.plant-botanical-name 
@@ -152,7 +152,10 @@
 
 #done{'data-role' => 'page', 'data-theme' => 'b'}
   #header{'data-role' => 'header'}
-    %h1 Nice work!
+    %h1
+      Nice work
+      %span.student-name-display
+      !
   #content{'data-role' => 'content'}
     %p
       Data for 

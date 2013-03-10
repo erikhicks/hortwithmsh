@@ -50,7 +50,7 @@ window.Form =
       Form.data[select.attr('name')] = $(select.find('option:selected')).html()
 
     if Form.data['student-name']
-      $('#status h1').html Form.data['student-name']
+      $('.student-name-display').html Form.data['student-name']
 
     console.log(Form.data)
 
