@@ -15,6 +15,9 @@
   #header{'data-role' => 'header'}
     %a{:href => '#welcome', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
     %h1 Greenhouse
+    %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
+  #status{'data-role' => 'header', 'data-theme' => 'c'}
+    %h1 Student Name
   #content{'data-role' => 'content'}
     %p
       %label{:for => 'greenhouse-temperature'} Greenhouse Temperature (&deg;F)
@@ -41,6 +44,9 @@
   #header{'data-role' => 'header'}
     %a{:href => '#greenhouse-info', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
     %h1 Plant Identification
+    %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
+  #status{'data-role' => 'header', 'data-theme' => 'c'}
+    %h1 Student Name
   #content{'data-role' => 'content'}
     %h3
       Plant Specimen Number
@@ -55,6 +61,9 @@
   #header{'data-role' => 'header', 'data-them' => 'b'}
     %a{:href => '#plant-identification', 'data-icon' => 'back', 'data-transition' => 'fade'} Back
     %h1.plant-name Unknown Plant
+    %a#start-over{:href => '#welcome', 'data-icon' => 'delete', 'data-transition' => 'fade'} Start Over
+  #status{'data-role' => 'header', 'data-theme' => 'c'}
+    %h1 Student Name
   #content{'data-role' => 'content'}
     %h3.plant-name Unknown Plant
     %h4.plant-botanical-name 
@@ -144,4 +153,5 @@
       %span.plant-name
       has been updated.
     %p
-      %a#form-complete-button{:href => '#welcome', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant
+      %a#form-new-button{:href => '#plant-identification', 'data-role' => 'button', 'data-transition' => 'fade'} Observe Another Plant
+      %a#form-complete-button{:href => '#welcome', 'data-role' => 'button', 'data-transition' => 'fade'} Start Over

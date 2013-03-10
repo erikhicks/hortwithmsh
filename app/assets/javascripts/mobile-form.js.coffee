@@ -14,6 +14,10 @@ window.Form =
       Form.getPlantData()
       return false if !Form.isValid
 
+    $('#welcome-form-button').click ->
+      Form.collectData $('#welcome')
+      return false if !Form.isValid
+
     $('#greenhouse-info-button').click ->
       Form.collectData $('#greenhouse-info')
       Form.saveData()
@@ -24,9 +28,8 @@ window.Form =
       return false if !Form.isValid
       Form.sendData()
 
-    $('#welcome-form-button').click ->
-      Form.collectData $('#welcome')
-      return false if !Form.isValid
+    $('#form-complete-button').click ->
+      Form.clearAllData()
 
     $('#flowers-or-buds').change ->
       $('#flowers-details .ui-collapsible-content').toggle()
@@ -46,6 +49,9 @@ window.Form =
       select = $(val)
       Form.data[select.attr('name')] = $(select.find('option:selected')).html()
 
+    if Form.data['student-name']
+      $('#status h1').html Form.data['student-name']
+
     console.log(Form.data)
 
   checkRequiredField: (input) ->
@@ -62,11 +68,20 @@ window.Form =
     $.post('/mobile/post-plant-data', Form.data)
       .done (data) ->
         console.log('success');
-        $('input, textarea').val('')
+        Form.clearPlantData()
       .fail ->
         console.log('failed');
       .always ->
         console.log('finished');
+
+  clearPlantData: ->
+    console.log 'clearPlantData'
+    $('#basic-info-form input, #basic-info-form textarea').val('')
+    $('#plant-id-number').val('')
+
+  clearAllData: ->
+    console.log 'clearAllData'
+    $('input, textarea').val('')
 
   getPlantData: ->
     $.post('/mobile/get-plant-information', {'id': Form.data['plant-id']})
