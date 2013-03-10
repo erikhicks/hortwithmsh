@@ -4,7 +4,7 @@ class MobileController < ApplicationController
   end
 
   def post_plant_data
-    mobile_plant_data = MobilePlantData.create(:plant_id => params["plant-id"].to_i, :data => params)
+    mobile_plant_data = MobilePlantData.create(:plant_id => params["plant-id"].to_i, :data => params.to_json)
     mobile_plant_data.save
     respond_to do |format|
       format.js

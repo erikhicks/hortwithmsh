@@ -5,3 +5,9 @@ label.required {
 input.required {
   border: 2px solid red;
 }
+
+input#light-intensity {
+  width: 20%;
+  max-width: 55px;
+  display: inline;
+}

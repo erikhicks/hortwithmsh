@@ -1,6 +1,6 @@
 HortwithmshV2::Application.routes.draw do
   resources :subjects
-
+  resources :hydroponics_data
   resources :materials
 
   resources :classrooms do
@@ -17,6 +17,8 @@ HortwithmshV2::Application.routes.draw do
   resources :units do
     post 'delete'
   end
+
+  match 'hydroponics_data/csv/:filter' => 'hydroponics_data#download'
 
   post 'classrooms/sort' => 'classrooms#sort'
 

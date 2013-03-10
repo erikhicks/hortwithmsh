@@ -26,8 +26,8 @@
       %label{:for => 'outside-temperature'} Outside Temperature (&deg;F)
       %input{:type => 'number', :name => 'outside-temperature', :id => 'outside-temperature'}
     %p
-      %label{:for => 'relative-humidity'} Light Intensity
-      %input{:type => 'number', :name => 'light-itensity', :id => 'light-itensity'}
+      %label{:for => 'light-intensity'} Light Intensity
+      %input{:type => 'range', :name => 'light-intensity', :id => 'light-intensity', :min => 0, :max => 10}
     %p
       %label{:for => 'relative-humidity'} Relative Humidity
       %input{:type => 'number', :name => 'relative-humidity', :id => 'relative-humidity'}
@@ -81,8 +81,14 @@
           %label{:for => 'nutrient-solution-temperature'} Nutrient Solution Temperature (&deg;F)
           %input{:type => 'number', :name => 'nutrient-solution-temperature', :id => 'nutrient-solution-temperature'}
         %p
-          %label{:for => 'growing-media-quality'} What Quality is the Growing Media?
+          %label{:for => 'nutrient-solution-ph'} Nutrient Solution pH
+          %input{:type => 'number', :name => 'nutrient-solution-temperature', :id => 'nutrient-solution-temperature'}
+        %p
+          %label{:for => 'growing-media-quality'} Quality of the Growing Media
           %input{:type => 'text', :name => 'growing-media-quality', :id => 'growing-media-quality'}
+        %p
+          %label{:for => 'growing-media-ph'} pH Level of the Growing Media
+          %input{:type => 'number', :name => 'growing-media-quality', :id => 'growing-media-quality'}
         %p
           %label{:for => 'height'} Plant Height (cm)
           %input{:type => 'number', :name => 'height', :id => 'height'}
