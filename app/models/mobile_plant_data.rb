@@ -38,10 +38,17 @@ class MobilePlantData < ActiveRecord::Base
         keys.each do |key|
           valid_data_array << data[key].to_s
         end
+
+        if (row.plant.nil?)
+          plant_name = ''
+        else
+          plant_name = row.plant.common_name
+        end
+
         combined_data = [
           row.created_at.strftime("%Y-%m-%d %I:%M:%S"),
           row.plant_id,
-          row.plant.common_name
+          plant_name
         ] + valid_data_array
         csv << combined_data
       end
