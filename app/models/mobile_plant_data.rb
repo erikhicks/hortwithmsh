@@ -39,10 +39,12 @@ class MobilePlantData < ActiveRecord::Base
           valid_data_array << data[key].to_s
         end
 
-        if (row.plant.nil?)
-          plant_name = ''
+        plant = MobilePlant.find(row.plant_id)
+        
+        if (plant)
+          plant_name = plant.common_name.to_s
         else
-          plant_name = row.plant.common_name
+          plant_name = ''
         end
 
         combined_data = [
