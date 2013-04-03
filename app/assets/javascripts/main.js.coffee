@@ -9,6 +9,7 @@ window.Page =
   init: ->
     @loadCalendar()
     Blog.init() if $('#blog').length > 0
+    Photos.init() if $('#photos').length > 0
 
   loadCalendar: ->
     url = 'https://www.google.com/calendar/feeds/fpl1hsa31339j8ksb8gsl1cnas%40group.calendar.google.com/public/full'

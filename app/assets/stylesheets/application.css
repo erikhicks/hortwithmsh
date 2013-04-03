@@ -14,4 +14,6 @@
  *= require plant_sale
  *= require classroom
  *= require blog
+ *= require jquery.carousel
+ *= require jquery.carousel.skin-tango
 */

@@ -12,6 +12,8 @@
 //
 //= require main
 //= require blog
+//= require photos
 //= require jquery
 //= require jquery_ujs
+//= require jquery.jcarousel.min
 //= require bootstrap-dropdown

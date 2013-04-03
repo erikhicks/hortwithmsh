@@ -1,3 +1,5 @@
+require 'net/http'
+
 class MainController < ApplicationController
   before_filter :get_classrooms
 
