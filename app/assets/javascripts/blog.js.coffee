@@ -7,7 +7,7 @@ window.Blog =
     @load()
 
   load: ->
-    url = 'http://washingtonstem.org/blog/author/alisonhitchcock/rss'
+    url = 'http://blog.washingtonstem.org/blog/author/alisonhitchcock/rss'
     
     $.ajax {
       url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
@@ -19,9 +19,9 @@ window.Blog =
   processPosts: (data) ->
     $.each data, (index, post) ->
       article = $('<article>');
-      title = $('<h1>').html($('<a>').html(post.title).attr('href',post.link));
+      title = $('<h1>').html($('<a>').html(post.title).attr('href',post.link.replace('://washingtonstem.org','://blog.washingtonstem.org')));
       content = $('<p>').html(post.content);
-      readMoreLink = $('<span>').html($('<a>').html('Read More &gt;').attr('href',post.link));
+      readMoreLink = $('<span>').html($('<a>').html('Read More &gt;').attr('href',post.link.replace('://washingtonstem.org','://blog.washingtonstem.org')));
 
       title.appendTo(article);
       content.appendTo(article);
