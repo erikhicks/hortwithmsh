@@ -15,5 +15,6 @@
 //= require photos
 //= require jquery
 //= require jquery_ujs
-//= require jquery.jcarousel.min
+//= require galleria
+//= require galleria.classic
 //= require bootstrap-dropdown

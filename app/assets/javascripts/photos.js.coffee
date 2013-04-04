@@ -4,6 +4,12 @@
 
 window.Photos = 
   init: ->
+    @element = $('#photos')
+
+    Galleria.loadTheme('/galleria.classic.js')
+    Galleria.configure
+      imageCrop: false
+
     @load()
 
   load: ->
@@ -17,4 +23,15 @@ window.Photos =
     }
   
   processPhotos: (data) ->
-    console.log data
+    images = []
+
+    $.each data.data, (index, object) ->
+      console.log object
+
+      images.push
+        image: object.images[3].source
+
+    images.reverse()
+
+    Galleria.run '#photos', 
+      dataSource: images
